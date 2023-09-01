@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+.content {
+    margin: 2rem;
+}
+
+.main-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+.links {
+    margin: 1rem;
+}
+
+.game-type{
+    margin-bottom: 2rem;
+}
+
+.game-info {
+    display: block;
+    margin: 1rem 0 0 1rem;
+}
+
+.game-description {
+    margin: 0;
+}
+.link-holder {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+a {
+    font-weight:lighter;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+    margin: 0;
+    
+}
