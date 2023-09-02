@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+	.socialBlock{
+		margin-right:auto;
+		margin-left:auto;
+	}
+	
+	.socialBlock td{
+		padding:0.25em;
+	}
+	
+	#socialBlockH5{
+		margin-top:0px;
+		font-weight:bold;
+		font-size:1.2em;
+	}
+	
+	#referralBlock{
+		margin-bottom:1em;
+		max-width:640px;
+		margin-right:auto;
+		margin-left:auto;
+		text-align:center;
+	}
+	
+	#referraltitle{
+		padding:0px 1em 0px 1em;	
+	}
+	
+	#boomSocial{
+		font-size:1.3em;
+		margin-left:auto;
+		margin-right:auto;
+		padding:1em;
+		display:none;
+	}
+	
+	.socialRow{
+		/* padding for row containing #boomSocial */
+		padding-left:1.5em;
+		padding-right:1.5em;	
+	}
+	
+	#referralurl{
+		font-weight:bold;
+	}
+
+

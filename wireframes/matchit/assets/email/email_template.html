@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>[SUBJECT]</title>
+
+<!--
+:::: TEXT COLOR
+pagebkg = background-color:#dedede    (Page Bkg color)
+contentbkg = background-color:#ffffff    (Content Box Bkg color)
+titlecolor = color:#990000  (Title Text)
+Small text: color:#555555  (Small Text)
+
+:::: TEXT/PATH EDITS
+path = [PATH] = https://s3.amazonaws.com/cataboom/assets/center-scratch-test/assets/email/
+text content = [SUBJECT]  [TITLE]  [CONTENT]  [LINK]
+
+:::: Graphics
+background = email_bkg.png
+button = email_button.png
+-->
+
+</head>
+
+<body style="color:#555555;font-family:Helvetica, Arial, sans-serif;background-color:#dedede;text-align:center;">
+
+<table style="background-image:url([PATH]email_bkg.png);background-color:#ffffff;background-repeat:no-repeat;margin-left:auto;margin-right:auto;width:480px;height:480px;">
+<tr>
+	<td>
+    <a href="[LINK]" target="_blank">
+        <div align="center">
+    	<img src="[PATH]email_logo.png" alt="Click Here">
+        </div>
+    </a>
+    </td>
+</tr>
+<tr>
+	<td style="color:#990000;font-size:1.8em;font-weight:bold;padding-left:0.5em;padding-right:0.5em">
+    	 <div align="center">
+        [TITLE]
+        </div>
+    </td>
+</tr>
+<tr>
+	<td style="padding-left:0.5em;padding-right:0.5em">
+     <div align="center">
+        [CONTENT]
+        </div>
+    </td>
+</tr>
+<tr>
+	<td style="padding-bottom:1em">
+         <div align="center">
+    	<a href="[LINK]" target="_blank">
+        <img src="[PATH]email_button.png" alt="Click Here">
+        </a>
+        </div>
+    </td>
+</tr>
+
+</table>
+
+</body>
+</html>

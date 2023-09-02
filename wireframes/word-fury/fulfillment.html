@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/skin.css"  rel="stylesheet">
+    <link href="assets/styles/fulfillment.css" rel="stylesheet">
+    <link href="assets/styles/form_generator.css" rel="stylesheet">
+      <!-- [TRACKING SCRIPTS] -->
+      <!-- [TRACKING SCRIPTS END] -->
+      <!-- [OUR TRACKING SCRIPTS] -->
+      <!-- [OUR TRACKING SCRIPTS END] -->
+
+      <style>
+		body{ background-image:url(assets/img/cover.jpg); }
+    </style>
+    <style id="formStyles">
+	/* CSS WRITTEN IN form_styler.js*/
+    </style>
+	<link href="assets/styles/override.css" rel="stylesheet">
+    <!-- [ FULFILLMENT FORM CSS ] -->
+    <!--<link href="assets/styles/fulfillmentform.css" rel="stylesheet">-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    
+    <script>
+
+    const iFrameMessage = {message: 'cb_navigate', page: 'fulfillment'};
+    window.top.postMessage(iFrameMessage, '*');
+    window.iFrameResizer = {
+      onReady: () => window.parentIFrame.sendMessage(iFrameMessage)
+    };
+		
+		var version = {
+			api:17,
+			scenario:"website",
+			canvas:[640,480],
+			video:false,
+			sfx:false,
+		};
+		
+    	var winlevel = 0;
+		var exitlevel = 0;
+		var gameclass = "demo"; //local, demo, test, live
+		var pageid = "fulfillment";
+		var thisFormId = "#" + "validationForm";
+		var imgpath = "assets/img/";
+		var deviceClass = "desktop";
+		var browserClass = "safari";
+		
+		var exitlinks = [
+			{ 
+				directoryid:"none", //exitlinks[0].directoryid
+				playcode:"none", // exitlinks[0].playcode
+				playerid:"none", // exitlinks[0].playerid
+				rules:"assets/docs/rules.pdf", //exitlinks[0].rules
+				privacy:"assets/docs/privacy.pdf", //exitlinks[0].privacy
+				email_primary:"none", //exitlinks[0].email_primary
+				engagepath:"none",
+			}
+			];
+			
+		var formsetup = [
+			{ 
+				modallogin:"popup", // "none" || "popup" - formsetup[0].modallogin
+				agemin:18, //formsetup[0].agemin
+				fulfillpath:"none", //formsetup[0].fulfillpath
+				coppapath:"none" //formsetup[0].coppapath // "none", "../message/[CLIENT-DIRECTORY]/coppa"
+			}
+		];
+			
+		var formOptions = {
+			form_channel:"formdata", // entry, exit, none, formdata
+		};
+		
+		var gpsOptions = {
+			  gps_channel:"gpsdata", // "entry", "exit"
+		  };
+			
+		//var prize = {link:"http://www.cataboom.com",code:"codeabc123",pin:"pin321abc"};
+		var prize = "[SQUARES-DATA]";
+		
+		var pageSpecs = {
+			footerclass:"specsdata",  //pageSpecs.footerclass = "none", "content", "under-backdrop", "under-form", "over-page" 
+		};
+
+		var envVars = {
+			recaptcha_site_key:"none",
+		};
+		
+    </script>
+    
+    <script id="jshdfulfillment"></script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.min.js"></script>
+
+  </head>
+  <body>
+  <!-- [TRACKING BODY SCRIPTS] -->
+  <!-- [TRACKING BODY SCRIPTS END] -->
+  <!-- [OUR TRACKING BODY SCRIPTS] -->
+  <!-- [OUR TRACKING BODY SCRIPTS END] -->
+
+  <div class="container">
+    
+    <div class="row">
+
+        <div class="center-block masthead">
+        
+        <p><img class="logo" src="assets/img/logo_fulfillment.png"></p>
+        
+        </div>
+    </div>
+    
+    <!-- ---------- [FORM START] ---------- -->
+    <!-- ---------- [FORM START] ---------- -->
+    <!-- ---------- [FORM START] ---------- -->
+    <div class="row">
+        <div class="col-lg-12 messageColumn">
+        
+             <div class="formColumn brandMessageBox ">
+             
+
+  <!-- ------[ FORM CONTENT START ]------- -->
+  <!-- ------[ FORM CONTENT START ]------- -->
+  <!-- ------[ FORM CONTENT START ]------- -->
+  
+  
+  
+<form method="post" name="requiredForm" id="validationForm" autocomplete="off" class="boomForm">
+<img class="img-responsive center-block" id="formPrize" src="assets/img/spacer1x1.png">
+</form>
+
+  <!-- ------[ FORM CONTENT END ]------- -->
+  <!-- ------[ FORM CONTENT END ]------- -->
+  <!-- ------[ FORM CONTENT END ]------- -->
+                </div>
+        </div>
+    </div>
+    <!-- ---------- [FORM END] ---------- -->
+    <!-- ---------- [FORM END] ---------- -->
+    <!-- ---------- [FORM END] ---------- -->
+    
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+  <!-- [ FULFILLMENT HEADER CONTENT VALIDATION JS ] -->
+  <script src="assets/js/fulfillment.js"></script>
+  <!-- [ FULFILLMENT FORM VALIDATION JS 2015 ] -->
+  <!--<script src="assets/js/fulfillmentform.js"></script>-->
+	  
+  <script type="text/javascript">
+	_NBSettings = {
+	   apiKey:"none",
+	};
+  </script>
+  <script id="mailbounce"></script>
+  
+  <script id="jsfooterfulfillment"></script>
+    
+  </body>
+</html>

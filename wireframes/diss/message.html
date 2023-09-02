@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <!-- SOCIAL -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="[CAMPAIGN-URL]" />
+    <meta property="og:title" content="[CAMPAIGN-TITLE]" />
+    <!-- SOCIAL IMAGE -->
+    <meta property="og:image" content="[CAMPAIGN-SOCIAL-IMAGE]" />
+    <meta property="og:image:secure_url" content="[CAMPAIGN-SOCIAL-IMAGE-SECURE]" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="315" />
+	<!-- SOCIAL DESCRIPTION -->
+    <meta property="og:description" content="[CAMPAIGN-DETAIL-DESCRIPTION]" />
+    <meta name="twitter:description" id="tweetDescription" content="[CAMPAIGN-TWITTER-DESCRIPTION]">
+    <meta name="urlshort" id="ogShortUrl" content="[CAMPAIGN-URL-SHORT]">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/skin.css"  rel="stylesheet">
+      <!-- [TRACKING SCRIPTS] -->
+      <!-- [TRACKING SCRIPTS END] -->
+      <!-- [OUR TRACKING SCRIPTS] -->
+      <!-- [OUR TRACKING SCRIPTS END] -->
+
+    <style>
+		body{ background-image:url(assets/img/cover.jpg); }
+    </style>
+    
+    <!-- ------ [ MESSAGE PAGE CSS ] ------ -->
+    <link href="assets/styles/message.css" rel="stylesheet">
+    <!-- :::::::::: [ SOCIAL PAGE CSS ] :::::::::: -->
+    <link href="assets/styles/social.css" rel="stylesheet">
+    
+    <style id="formStyles">
+	/* CSS WRITTEN IN form_styler.js*/
+    </style>
+	<link href="assets/styles/override.css" rel="stylesheet">
+    
+    <!-- ------ [ MESSAGE PAGE CONTENT JS ] ------ -->
+    <!-- ------ [ MESSAGE PAGE CONTENT JS ] ------ -->
+    <!-- ------ [ MESSAGE PAGE CONTENT JS ] ------ -->
+	<script>
+        const iFrameMessage = {message: 'cb_navigate', page: 'message'};
+        window.top.postMessage(iFrameMessage, '*');
+        window.iFrameResizer = {
+          onReady: () => window.parentIFrame.sendMessage(iFrameMessage)
+        };
+		
+		var version = {
+			api:17,
+			scenario:"banner",
+			canvas:[514,428],
+		};
+	
+		var exitlinks = [
+		  {
+			directoryid:"none",
+			playcode:"none", // exitlinks[0].playcode
+			playerid:"none", // exitlinks[0].playerid
+			rules:"assets/docs/rules.pdf", //exitlinks[0].rules
+			privacy:"assets/docs/privacy.pdf", //exitlinks[0].privacy
+			exiturl:"http://www.cataboom.com", // exitlinks[0].exiturl //url link or goback1 through goback5
+			referral:"none", //  exitlinks[0].referral // "none", "http://tinyurl.com/abcd123?code=aaabbbccc"
+			referralcredit:0, // exitlinks[0].referralcredit
+			refertext:"none", // exitlinks[0].refertext
+			refercta:"none",  // exitlinks[0].refertext
+			socialcta:"none",  // exitlinks[0].socialcta , "Share with Friends"
+			social:"none", // "none", "facebook|twitter|google|pinterest|linkedin|email"
+			socialpreview:"socialpreview.html", // exitlinks[0].socialpreview
+			actionpath:"none", 
+			engagepath:"none",
+			messagepath:"none", // exitlinks[0].messagepath
+		  }
+		];
+		
+		/*var formOptions = {
+			form_channel:"formdata", // entry, exit, none, formdata
+		};*/
+		
+		var socialOptions = {
+			form_channel:"socialdata", // entry, exit, none, formdata
+		};
+		
+		var messageOptions = {
+			form_channel:"messagedata", // entry, exit, none, formdata
+		};
+		
+		var messageCopy = "[MESSAGE-COPY]";
+		
+	//notvalid, confirm, notstarted, inactive, gameover, played, daymax, weekmax, winmax 
+	//unplayed, upsell, coppa, coppa2, social, gateway, success, error, winner, close
+	var pageclass = "confirm";
+	var gameclass = "demo"; //local, demo, test, live
+	var pageid = "message";
+		
+	var pageSpecs = {
+		footerclass:"specsdata",  //pageSpecs.footerclass = "none", "content", "under-backdrop", "under-form", "over-page" 
+	};
+	
+	</script>
+	  
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.min.js"></script>
+    
+  </head>
+  <body>
+  <!-- [TRACKING BODY SCRIPTS] -->
+  <!-- [TRACKING BODY SCRIPTS END] -->
+  <!-- [OUR TRACKING BODY SCRIPTS] -->
+  <!-- [OUR TRACKING BODY SCRIPTS END] -->
+  <div class="container">
+    
+    <div id="messageHdRow" class="row">
+    	<div class="center-block masthead">
+        
+        <p><img id="messageImg" class="logo" src="assets/img/logo_message.png"></p>
+        
+        </div>
+    </div>
+    
+<!------------ [FORM START] ------------>
+    <!------------ [FORM START] ------------>
+    <!------------ [FORM START] ------------>
+    <div class="row" id="messageRow">
+        <div id="messageColumn" class="col-lg-12 messageColumn">
+        
+             <div id="messageBox" class="messageBox formColumn">
+             <h3 class="formH3" id="messageH3">Message for you</h3>
+             
+             <div class="" id="messageDiv">
+                 Oops!  This play code is not valid.
+             </div>
+             
+             <p>
+             	<!-- ---------- [ EXIT BUTTONS START ] ----------  -->
+                
+                <button type="button" class="btn btn-md btn-default center-block emTopFill" id="messageExit">
+                	<span id="exitText">Exit</span>
+                </button>
+                <!-- ---------- [ EXIT BUTTONS END ] ----------  -->
+                
+             </p>
+             
+             
+             </div>
+
+        </div>
+    </div>
+    <!------------ [FORM END] ------------>
+    <!------------ [FORM END] ------------>
+    <!------------ [FORM END] ------------>
+    
+          <!-- :::::::::: [ boomSocial START] :::::::::: -->
+      <!-- :::::::::: [ boomSocial START] :::::::::: -->
+      <!-- :::::::::: [ boomSocial START] :::::::::: -->
+      <div class="row" >
+
+      <div class="col-lg-12">
+
+      <div class="text-center" id="boomSocial">
+
+          <!-- :::::::::: [ referral TABLE START] :::::::::: -->
+          <table id="referralBlock">
+              <tr>
+                <td id="referraltitle">
+                <span id="referText">Share this link &amp; earn an entry when friends click it to play.</span>
+   				<p id="referralSpan">Get 1-10 additional entries per day.</p>
+                </td>
+              </tr>
+              <tr>
+                <td id="referralurl">[REFERRAL-GOES-HERE]</td>
+              </tr>
+          </table>
+          <!-- :::::::::: [ referral TABLE END] :::::::::: -->
+
+          <!-- :::::::::: [ social TABLE START] :::::::::: -->
+          <h5 class="socialBlock" id="socialBlockH5">Share with Friends</h5>
+          <table class="socialBlock">
+          <tr>
+            <td id="twitter">
+            <a href="#" class="socialClick twitterlink" data-target="twitter">
+                <img class="img-responsive" src="assets/img/social_twitter.png" alt="Share on Twittaboom" />
+            </a>
+            </td>
+            <td id="facebook">
+                <a href="#" class="socialClick facebooklink" data-target="facebook">
+                    <img class="img-responsive" src="assets/img/social_facebook.png" alt="Share on Facebook" />
+                </a>
+            </td>
+
+            <td id="pinterest">
+            <a href="#" class="socialClick pinterestlink" data-target="pinterest">
+                <img class="img-responsive" src="assets/img/social_pinterest.png" alt="Share on Pinterest" />
+            </a>
+            </td>
+            <td id="linkedin">
+                <a href="#" class="socialClick linkedinlink" data-target="linkedin">
+                    <img class="img-responsive" src="assets/img/social_linkedin.png" alt="Share on LinkedIn" />
+                </a>
+            </td>
+            <td id="social-email">
+                <a href="#" class="socialClick emaillink" data-target="email">
+                    <img class="img-responsive" src="assets/img/social_email.png" alt="Share with email" />
+                </a>
+            </td>
+          </tr>
+          </table>
+          <!-- :::::::::: [ social TABLE START ] :::::::::: -->
+
+      </div> <!--  end col-lg, col-md, col-sm -->
+
+	  </div><!-- close social column div -->
+
+        </div> <!-- row end boomSocial -->
+
+        <!-- :::::::::: [ boomSocial END] :::::::::: -->
+        <!-- :::::::::: [ boomSocial END] :::::::::: -->
+        <!-- :::::::::: [ boomSocial END] :::::::::: -->
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <!-- ------ [ MESSAGE PAGE JS ] ------ -->
+    <script src="assets/js/message.js"></script>
+  </body>
+</html>

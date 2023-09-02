@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta template="selmer">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.9, user-scalable=no">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <!-- SOCIAL -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{campaign-url}}" />
+  <meta property="og:title" content="{{campaign-title}}" />
+  <!-- SOCIAL IMAGE -->
+  <meta property="og:image" content="{{campaign-social-image}}" />
+  <meta property="og:image:secure_url" content="{{campaign-social-image-secure}}" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <!-- SOCIAL DESCRIPTION -->
+  <meta property="og:description" content="{{campaign-detail-description}}" />
+  <meta name="twitter:description" id="tweetDescription" content="{{campaign-twitter-description}}">
+  <meta name="urlshort" id="ogShortUrl" content="{{campaign-url-short}}">
+  <title>{{title}}</title>
+  <link href="assets/styles/override.css" rel="stylesheet">
+
+  {{tracking-scripts|safe}}
+
+  <!-- [ USER AGENT REDIRECT ] -->
+  <script>
+    const iFrameMessage = {message: 'cb_navigate', page: 'index'};
+    window.top.postMessage(iFrameMessage, '*');
+    window.iFrameResizer = {
+      onReady: () => window.parentIFrame.sendMessage(iFrameMessage)
+    };
+    var redirect = {
+      directoryid:"{{directoryid|default:"none"}}",
+    }
+
+    var backendInfo = {
+      apiLevel: {{apilevel|default:0}},
+    };
+
+    var version = {
+      api:19,
+      mechanic:"wheel3up512_winlevel1-10", //pick_1x2_choice
+      mechver:8,
+      source:"wheel_1up640_winlevel",
+      canvas:[512,512],
+      scenario:"website",
+      video:false,
+      sfx:false,
+    };
+
+    var winlevel = {{winlevel|default:0}};
+    var imgpath = "assets/img/";
+    var gameclass = "{{gameclass|default:"demo"}}"; //local, demo, test, live
+    var promoCount = {{promoCount|default:4}};
+
+    /* :::::::::: [ EXIT LINK VARS ] ::::::::: */
+    var exitlinks = [
+      {
+        directoryid:"{{directoryid|default:"none"}}",
+        playcode:"{{playcode|default:"none"}}",
+        playerid:"{{playerid|default:"none"}}",
+        rules:"{{rules|default:"assets/docs/rules.pdf"}}",
+        privacy:"{{privacy|default:"assets/docs/privacy.pdf"}}",
+        default0:"{{default0|default:"goback1"}}",
+        default1:"{{default1|default:"fulfillment.html"}}",
+        default2:"{{default2|default:"fulfillment.html"}}",
+        default3:"{{default3|default:"fulfillment.html"}}",
+        default4:"{{default4|default:"fulfillment.html"}}",
+        default5:"{{default5|default:"fulfillment.html"}}",
+        default6:"{{default6|default:"fulfillment.html"}}",
+        default7:"{{default7|default:"fulfillment.html"}}",
+        default8:"{{default8|default:"fulfillment.html"}}",
+        default9:"{{default9|default:"fulfillment.html"}}",
+        default10:"{{default10|default:"fulfillment.html"}}",
+        referral:"{{referral|default:"none"}}",
+        referralcredit:{{referralcredit|default:0}},
+        refertext:"{{refertext|default:"none"}}",
+        refercta:"{{refercta|default:"none"}}",
+        socialcta:"{{socialcta|default:"none"}}",
+        social:"{{social|default:"none"}}",
+        showsocial:"{{showsocial|default:"true|false|false|false|false|false|false|false|false|false|false"}}",
+        socialpreview:"{{socialpreview|default:"socialpreview.html"}}",
+        actionpath:"{{actionpath|default:"none"}}",
+        engagepath:"{{engagepath|default:"none"}}",
+        choicepath:"{{choicepath|default:"none"}}",
+        linkset:{{linkset|default:["none"]|json|safe}},
+        autogateway:"{{autogateway|default:"-1"}}",
+        gateclass:"{{gateclass|default:"none"}}",
+        gatewaypath:"{{gatewaypath|default:"none"}}"
+      }
+    ];
+
+    var pageSpecs = {{pageSpecs|default:"{footerclass:'specsdata'}"|safe}};
+    var envVars = {{envVars|default:"{recaptcha_site_key:'none'}"|safe}};
+    var pagefooter = {{pagefooter|default:false}};
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.min.js"></script>
+</head>
+<body>
+{{tracking-body-scripts|safe}}
+<div id="root"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="assets/js/variant.js"></script>
+<script src="assets/js/mechanic.js"></script>
+</body>
+</html>

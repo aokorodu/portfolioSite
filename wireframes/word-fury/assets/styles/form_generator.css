@@ -1,0 +1,545 @@
+.boomForm{
+	/*border:#DEDEDE solid 1px;*/
+	/*background-color:#FEFEFE;*/
+	/*border-radius:4px;*/
+	/*color:#343434;*/
+	/*max-width:355px;*/
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top:1em;*/
+	padding:0 1em 1em 1em;
+	font-size:1.4em;
+}
+
+#entrySkinDiv{
+	padding-top: 0.2em !important;
+}
+
+#modalBackdrop{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height: 100%;
+	min-height:100%;
+	position: fixed;
+	background-color:rgba(0,0,0,0.40);
+	display:none;
+	z-index:1050;
+}
+
+#formBypass{
+	max-width:14em;
+	z-index:1099;
+}
+
+input{
+	margin-top:1em;/**/
+}
+
+select{
+	margin-top:1em;
+}
+
+.boomForm td div{
+	margin:0px;
+}
+
+.boomForm td input{
+	margin:0px;
+}
+
+.boomForm textarea{
+	margin-top: 1em;
+	overflow:hidden;
+}
+
+.tdRight{
+	padding-left:0.5em;
+}
+
+.tdLeft{
+	padding-right:0.5em;
+}
+
+.tdLeftRight{
+	padding-left:0.5em;
+	padding-right:0.5em;
+}
+
+.formTableCenter{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.formTableLeft{
+	margin-left:0px;
+	margin-right:auto;
+}
+
+.formTableRight{
+	margin-left:auto;
+	margin-right:0px;
+}
+
+.boomForm div + table {
+	/* select first table after text input div */
+	margin-top:-1em;
+}
+
+.boomForm td input{
+	margin-top:1em !important;/**/
+}
+
+.boomForm .elementTable{
+	min-width:100% !important;
+}
+
+.tdTop{
+	/*padding-top:1em;
+	margin-top:1em;*/
+}
+
+.tdTop input{
+	max-width:100% !important;
+}
+
+.tdLeft select{
+	/**/
+}
+
+.tdRight input{
+	width:100% !important;
+}
+
+.tableTextSelect .tdTop{
+	/* td for table with input followed by select */
+	width:50% !important;
+}
+
+/* :::::: [ error feedback for multiple inputs in table rows start ] :::::: */
+/* :::::: [ error feedback for multiple inputs in table rows start ] :::::: */
+
+.inputTr td input{
+	padding-right:1em !important;
+}
+
+.inputTr td .form-control-feedback{
+	/*width:1.5em;*/
+}
+
+/* :::::: [ error feedback for multiple inputs in table rows end ] :::::: */
+/* :::::: [ error feedback for multiple inputs in table rows end ] :::::: */
+
+/* :::::: [ multiple checkbox table begin ] :::::: */	
+
+.checkBoxTable{
+		display: block;
+	}
+
+.checkBoxTable td input{
+		margin-top:  0.3em !important;
+	}
+
+	.checkBoxTable td{
+		vertical-align: top;
+	}
+
+.checkLabelP{
+margin-top: 0.5em;
+margin-bottom: -0.2em;
+}
+
+.checkLabelVerticalP{
+margin-top: 0.5em;
+margin-bottom: -0.8em;
+}
+
+.radioLabelP{
+margin-top: 0.5em;
+margin-bottom: -0.4em;
+}
+
+label + .checkbox{
+margin-top: 0px;
+}
+
+label + .radio{
+margin-top: 0px;
+}
+
+.radio-inline + label{
+margin-top: 1em;
+}
+
+.radioLabel{
+display: block;
+}
+
+
+/* :::::: [ multiple checkbox table end] :::::: */	
+
+.boomForm .btn{
+	margin-top:1em;
+}
+
+.boomForm p{
+	margin-top:1em;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type=number] {
+	-moz-appearance:textfield;
+}
+
+input[type='checkbox']{
+	box-shadow:none  !important;
+}
+
+.boomForm .form-control{
+	box-shadow:none  !important;
+}
+
+#feedback-bday{
+margin-bottom:-1em;
+padding:0px;
+}
+
+#table-bday-text, #table-bday-select{
+margin-top:0.5em;
+}
+
+#table-bday-text input {
+margin-top:.3em !important;
+}
+
+#table-bday-select select{
+margin-top:.3em !important;
+}
+
+/* :::::::::: [ CAPTCHA BEGIN ] ::::::::::: */
+
+#turnstileElement, #captchaElement, #captchaV3Element{
+width:304px !important;
+}
+
+.captchaCenter{
+margin-left:auto;
+margin-right:auto;
+}
+
+.captchaLeft{
+margin-left:0px;
+margin-right:auto;
+}
+
+.captchaRight{
+margin-left:auto;
+margin-right:0px;
+}
+
+.captchaDemo{
+text-align:center;
+padding-top:1.5em;
+border:1px solid #d3d3d3;
+width:300px;
+height:76px;
+background-color:#f9f9f9;
+color:#cccccc;
+border-radius:4px;
+}
+
+.turnstileDemo{
+text-align:center;
+padding-top:1.5em;
+border:1px solid #d3d3d3;
+width:300px;
+height:76px;
+background-color:#f9f9f9;
+color:#cccccc;
+border-radius:4px;
+}
+
+.captchaDemo:before{
+content: "- Captcha Place Holder -";
+}
+
+.turnstileDemo:before{
+content: "- Turnstile Place Holder -";
+}
+
+/* :::::::::: [ CAPTCHA END ] ::::::::::: */
+
+/* :::::::::: [ TABLE CHAIN CSS START ] ::::::::::: */
+
+.table-chain{
+width:100%;
+margin-bottom: 1em;
+}
+
+.table-chain td{
+padding-right: 1em;
+}
+
+.table-chain td:last-child{
+padding-right: 0px;
+}
+
+.table-chain th{
+padding-bottom: 0.3em;
+font-weight: normal;
+}
+
+.table-chain select{
+margin-top:0px;
+}
+
+.checkbox + .table-chain{
+margin-top: 1em;
+}
+
+.form-group + .table-chain{
+margin-top:0.3em;
+}
+
+.td-chain-vertical{
+padding-bottom: 0.7em;
+}
+
+.table-chain-vertical{
+margin-bottom: 0px;
+}
+
+.selectRow{
+/* tweaks for text in horizontal selects */
+padding-right: 6px !important;
+text-overflow: ellipsis;/**/
+}
+
+
+/* :::::::::: [ TABLE CHAIN CSS END ] ::::::::::: */
+
+
+/* :::::::::: [ COLOR ELEMENTS BEGIN ] :::::::::: */
+/* :::::::::: [ COLOR ELEMENTS BEGIN ] :::::::::: */
+.boomForm .glyphicon-ok{
+	/*color:#CCCCCC;*/
+}
+
+.boomForm button .glyphicon-ok{
+	/*color:#555555;*/
+}
+
+.boomForm .glyphicon-remove{
+	/*color:#a74341;*/
+}
+
+.boomForm .has-error .form-control{
+	/*border:solid 1px #a74341;*/
+}
+
+
+/* :::::::::: [ COLOR ELEMENTS END ] :::::::::: */
+/* :::::::::: [ COLOR ELEMENTS END ] :::::::::: */
+
+/* ::::::::: [ INPUT LABEL CSS START ] :::::::::: */
+.boomForm .inputLabel{
+	/*margin-top:-0.5em;*/
+	margin-bottom:0.1em;
+	padding:0px;
+}
+
+.screenLabel{
+	margin-top:0px;
+}
+
+.form-group-label{
+	margin-top: -0.8em;/**/
+}
+
+.form-group-label .glyphicon{
+	/* glphicon tweak inside .form-group-label  group*/
+	top:1.4em !important;
+}
+
+#formPrize + .form-group-label{
+	margin-top: 0.5em; /* api 06 1st label in fulfillment  */
+}
+
+table + .form-group-label{
+	/* margin top for label group when preceeded by table. */
+	margin-top:0.5em;
+}
+
+table + label{
+	/* margin top for label when preceeded by table.*/
+	margin-top:1em;
+}
+
+select + label{
+	/* margin top for label when preceeded by table. */
+	margin-top:1em;
+}
+
+.form-group-range .form-control-feedback{
+margin-top: -0.5em;
+		}
+.form-group-range input{
+margin-top: 0.2em;
+padding-right: 0.8em !important;
+/*margin-right: 2em;*/
+}
+
+.submittedEmailBlock input{
+margin-top: 0px;
+}
+
+.topSpacerHalfem{
+margin-top: 0.5em;
+}
+
+.screenMailBounceLabel{
+margin-top: 0px;
+}
+
+/* :: [ NEW API 16 02-20 ] :: */
+.blockgroup-0 .inputLabel{
+margin-top: 1em;
+display: block;
+}
+
+/* ::::::::: [ INPUT LABEL CSS END ] :::::::::: */
+
+#formPrize{
+	/* IMAGE AT TOP OF FULFILLMENT FORM */
+	margin-top:1em;
+}
+
+/* ::::::::::: [ GPS ELEMENTS START ] :::::::::: */
+/* ::::::::::: [ GPS ELEMENTS START ] :::::::::: */
+.geoElements{
+	margin-bottom:0px;
+}
+
+.geoElements input{
+	margin-top:0px;
+	margin-bottom:0.5em;
+}
+
+.geoElements label{
+	margin-top:0px;
+}
+
+.geoInput{
+	pointer-events: none;
+}
+/* ::::::::::: [ GPS ELEMENTS END ] :::::::::: */
+/* ::::::::::: [ GPS ELEMENTS END ] :::::::::: */
+
+/* ::::::::::: [ CSS DISABLE START ] :::::::::: */
+/* ::::::::::: [ CSS DISABLE START ] :::::::::: */
+.fieldDisable{
+pointer-events: none;
+}
+
+.notAllowed{
+cursor:not-allowed;
+}
+/* ::::::::::: [ CSS DISABLE END] :::::::::: */
+/* ::::::::::: [ CSS DISABLE END ] :::::::::: */
+
+/* ::::::::::: [ RULE-PRIVACY POP-UP MODAL START ] :::::::::: */
+/* ::::::::::: [ RULE-PRIVACY POP-UP MODAL START ] :::::::::: */
+
+#termsDiv{
+	display:none;
+	position: absolute;
+	top: 1.5em;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	width:300px;
+	padding:0.5em 0px 0.5em 0px;
+	border-radius:8px;
+	z-index:1059;
+	width:94%;
+	min-width:320px;
+	min-height:93vh;
+}
+
+#termsIframe{
+	min-height:75vh;
+	width:100%;
+}
+
+#btnCloseTerms{
+	border-style: solid;
+	border-radius:1em;
+	padding:0.2em;
+	margin-bottom:0.5em;
+	cursor:pointer;
+	font-size:1.4em;
+}
+
+#closeDiv{
+	padding-right:1em;
+}
+
+#rulesHref{
+	cursor:pointer;
+	text-decoration:none;
+}
+
+#rulesHref:hover{
+	text-decoration: underline;
+}
+
+#privacyHref{
+	cursor:pointer;
+	text-decoration:none;
+}
+
+#privacyHref:hover{
+	text-decoration: underline;
+}
+
+/* ::::::::::: [ RULE-PRIVACY POP-UP MODAL END ] :::::::::: */
+/* ::::::::::: [ RULE-PRIVACY POP-UP MODAL END ] :::::::::: */
+
+.radio-inline .radioHorizontal{
+margin-top: 0.3em !important;
+}
+
+.radioTd{
+padding-right:  0.7em !important;
+}
+
+
+/* --------- [ small VIEW ]---------  */
+@media all and (min-width: 768px) {
+
+}
+
+/* --------- [ med VIEW ]---------  */
+@media all and (min-width: 992px) {
+
+/* entry form medium view */
+/*.entryForm{
+		margin-top:7em;
+	}*/
+}
+
+/* --------- [ LARGE VIEW ]---------  */
+@media all and (min-width: 1200px) {
+
+
+}
+
+.flex {
+display: flex;
+}

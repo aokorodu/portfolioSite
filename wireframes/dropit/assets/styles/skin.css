@@ -1,0 +1,281 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	/*background-color:#000000;	*/
+	color:#555555;
+	font-size:1em;
+	margin:0px;
+	padding:0px;
+	min-height:100vh;
+	background-repeat:no-repeat;
+	background-position:top center;
+	background-attachment:fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	background-color:#333333;	
+	padding-bottom:70px; 
+}
+
+canvas{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	display:block;
+	max-width:640px;
+	max-height:480px;
+	width:100%;
+	height:auto;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding:0px;
+}
+
+#containerBkg{
+		padding:0px;
+	}
+
+#loader:before{
+	display:none;
+}
+
+.logo{
+	width:100%;
+	height:auto;
+	max-width:640px;
+}
+
+.masthead{
+	text-align:center;	
+}
+
+.mastheadFulfill{
+	text-align:center;	
+	max-width:320px;
+}
+
+.masthead p:first-child{
+	margin-bottom: 0px;	
+}
+
+.emTopFill{
+	margin-top:1em;
+}
+
+.promoImg{
+	display:block;
+	margin:0px auto 0px auto;
+}
+
+#promoRow{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.promoColumn{
+    padding: 0px;
+}
+
+.sideBar{
+	margin-top:1em !important;
+	margin-left:6em;
+	margin-right:0px;
+	width:180px;
+	text-align:center;
+	padding:0px 1em 1em 1em;
+}
+
+.sideBar .media{
+	text-align:left;
+	padding:.5em 0px .5em 0px;
+}
+
+.gameColumn{
+	margin-top:0;
+	max-width:640px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.gameContainer{
+	padding:0px;
+}
+
+.emPadTop{
+	padding-top:1em !important;
+	
+}
+
+/*---------- [ BRAND DETAILS START ] ----------*/
+
+.gameColumn div{
+	padding:1em;
+}
+
+.gameColumn p{
+	margin:0px 0px 0px 0px;
+}
+
+.brandFooter{
+	background-color:#000000;
+	color:#FFFFFF;
+	padding:1em 0px 1em 0px;
+	font-size:1.1em;
+}
+
+.brandFooter p{
+	font-size:.8em;
+}
+
+.brandFooter a{
+	color:#FFFFFF;	
+}
+
+#playcodeContent{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+#alertBox{
+	border:#FF0000 solid 1px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	background-color:rgba(204,0,0,.9);
+	padding:1em;
+	color:#FFFFFF;
+}
+
+/* ::::::::: [ PRELOADER START ] ::::::::::: */
+/* ::::::::: [ PRELOADER START ] ::::::::::: */
+.loader180 {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 0.7s linear infinite;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#boomLoader{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	display:block;
+	max-width:640px;
+	max-height:480px;
+	width:100%;
+	min-height: 640px;
+	height: 480px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding:0px;
+	position: absolute;
+}
+
+/* ::::::::: [ PRELOADER END ] ::::::::::: */
+/* ::::::::: [ PRELOADER END ] ::::::::::: */
+
+/* ::::::::::: [ LANDSCAPE START ] ::::::::::: */
+
+	@media all and (orientation:landscape) and (max-width: 768px){
+		
+        canvas{
+			max-width:385px;
+		}
+		
+		.logo{
+			max-width:385px;
+		}
+		
+		.promoImg{
+			max-width:385px;
+		}
+		
+	}
+
+/* ::::::::::: [ LANDSCAPE END ] ::::::::::: */
+
+/* --------- [ small VIEW ]---------  */
+@media all and (min-width: 768px) {
+
+
+}
+
+/* --------- [ med VIEW ]---------  */
+@media all and (min-width: 992px) {
+
+
+}
+
+/* --------- [ LARGE VIEW ]---------  */
+@media all and (min-width: 1200px) {
+
+	.gameColumn{
+		/*margin-top:1em;*/
+	}
+	
+	#logo{
+		max-width:300px;
+		width:100%;
+		height:auto;
+	}
+	
+}
+
+/*  :::::::::: [ IE TWEAKS START ] ::::::::::  */
+
+@media (-ms-high-contrast: active) and (min-width: 100px), (-ms-high-contrast: none) and (min-width: 100px) {
+	 
+	 #teaserCanvas {
+		  width: 320px !important;
+		  height: 240px !important;
+		}
+		
+	#boomCanvas {
+		  width: 320px !important;
+		  height: 240px !important;
+		}
+ }
+ 
+@media (-ms-high-contrast: active) and (min-width: 480px), (-ms-high-contrast: none) and (min-width: 480px) {
+	 
+	 #teaserCanvas {
+		  width: 480px !important;
+		  height: 360px !important;
+		}
+		
+	#boomCanvas {
+		  width: 480px !important;
+		  height: 360px !important;
+		}
+ }
+
+ @media (-ms-high-contrast: active) and (min-width: 640px), (-ms-high-contrast: none) and (min-width: 640px) {
+	 
+	 #teaserCanvas {
+		  width: 640px !important;
+		  height: 480px !important;
+		}
+		
+	#boomCanvas {
+		  width: 640px !important;
+		  height: 480px !important;
+		}
+ }
+
+

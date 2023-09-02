@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta template="selmer">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.9, user-scalable=no">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <!-- SOCIAL -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<!-- selmer - {campaign-url} -->" />
+  <meta property="og:title" content="<!-- selmer - {campaign-title} -->" />
+  <!-- SOCIAL IMAGE -->
+  <meta property="og:image" content="<!-- selmer - {campaign-social-image} -->" />
+  <meta property="og:image:secure_url" content="<!-- selmer - {campaign-social-image-secure} -->" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <!-- SOCIAL DESCRIPTION -->
+  <meta property="og:description" content="<!-- selmer - {campaign-detail-description} -->" />
+  <meta name="twitter:description" id="tweetDescription" content="<!-- selmer - {campaign-twitter-description} -->">
+  <meta name="urlshort" id="ogShortUrl" content="<!-- selmer - {campaign-url-short} -->">
+  <title><!-- selmer - {title} --></title>
+  <link href="assets/styles/override.css" rel="stylesheet">
+
+  <!-- selmer - {tracking-scripts} -->
+
+  <!-- [ USER AGENT REDIRECT ] -->
+  <script>
+    const iFrameMessage = {message: 'cb_navigate', page: 'index'};
+    window.top.postMessage(iFrameMessage, '*');
+    window.iFrameResizer = {
+      onReady: () => window.parentIFrame.sendMessage(iFrameMessage)
+    };
+    var redirect = {
+      directoryid:"none",
+    }
+
+    var backendInfo = {
+      apiLevel: 0,
+    };
+
+    var version = {
+      api:19,
+      mechanic:"wheel3up512_winlevel1-10", //pick_1x2_choice
+      mechver:8,
+      source:"wheel_1up640_winlevel",
+      canvas:[512,512],
+      scenario:"website",
+      video:false,
+      sfx:false,
+    };
+
+    var winlevel = 0;
+    var imgpath = "assets/img/";
+    var gameclass = "demo"; //local, demo, test, live
+    var promoCount = 4;
+
+    /* :::::::::: [ EXIT LINK VARS ] ::::::::: */
+    var exitlinks = [
+      {
+        directoryid:"none",
+        playcode:"none",
+        playerid:"none",
+        rules:"assets/docs/rules.pdf",
+        privacy:"assets/docs/privacy.pdf",
+        default0:"goback1",
+        default1:"fulfillment.html",
+        default2:"fulfillment.html",
+        default3:"fulfillment.html",
+        default4:"fulfillment.html",
+        default5:"fulfillment.html",
+        default6:"fulfillment.html",
+        default7:"fulfillment.html",
+        default8:"fulfillment.html",
+        default9:"fulfillment.html",
+        default10:"fulfillment.html",
+        referral:"none",
+        referralcredit:0,
+        refertext:"none",
+        refercta:"none",
+        socialcta:"none",
+        social:"none",
+        showsocial:"true|false|false|false|false|false|false|false|false|false|false",
+        socialpreview:"socialpreview.html",
+        actionpath:"none",
+        engagepath:"none",
+        choicepath:"none",
+        linkset:["none"],
+        autogateway:"-1",
+        gateclass:"none",
+        gatewaypath:"none"
+      }
+    ];
+
+    var pageSpecs = {footerclass:'specsdata'};
+    var envVars = {recaptcha_site_key:'none'};
+    var pagefooter = false;
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.1/iframeResizer.contentWindow.min.js"></script>
+</head>
+<body>
+<!-- selmer - {tracking-body-scripts} -->
+<div id="root"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="assets/js/variant.js"></script>
+<script src="assets/js/mechanic.js"></script>
+</body>
+</html>
