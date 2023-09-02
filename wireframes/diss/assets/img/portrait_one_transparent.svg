@@ -1,0 +1,17 @@
+<svg width="360" height="720" viewBox="0 0 360 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="360" height="720" fill="#F2F2F2"/>
+<g id="portrait_one_transparent">
+<g id="targets">
+<path id="moon_target" d="M260.64 47.52L280.08 19.44L313.92 15.12L321.12 35.28L325.44 57.6L321.12 77.04L308.88 95.04L266.4 77.04L260.64 47.52Z" stroke="black"/>
+<path id="plant_target" d="M172.8 683.28L174.96 622.8L195.12 608.4L222.48 617.76L229.68 639.36L215.28 668.16V683.28H172.8Z" stroke="black"/>
+<path id="left_hair_target" d="M69.8403 475.2L64.8003 456.48L73.4403 447.84L85.6803 444.24L89.2803 456.48L97.9203 460.08L95.0403 467.28L85.6803 471.6L79.9203 478.08L69.8403 475.2Z" stroke="black"/>
+<path id="shirt_target" d="M169.92 527.04L175.68 490.32L187.2 485.28L190.8 492.48L187.2 530.64L169.92 527.04Z" stroke="black"/>
+<path id="right_hair_target" d="M241.92 478.8V468.72L257.04 460.08L269.28 468.72L262.08 483.12L241.92 478.8Z" stroke="black"/>
+<path id="left_star_target" d="M46.0801 98.64V64.08L65.5201 45.36L90.7201 59.04L91.4401 90L46.0801 98.64Z" stroke="black"/>
+<path id="right_star_target" d="M277.2 255.6L264.24 218.88L303.84 208.8L321.84 226.08L316.08 255.6H277.2Z" stroke="black"/>
+<path id="left_shoe_target" d="M235.44 586.08L217.44 591.12V599.76H243.36L245.52 591.12L235.44 586.08Z" stroke="black"/>
+<path id="right_shoe_target" d="M318.24 582.48L313.92 567.36L323.28 550.08L334.08 555.12L330.48 582.48H318.24Z" stroke="black"/>
+<path id="lamp_target" d="M253.5 403.5L231 385.5L256.5 354L324.5 356L356 385.5L357.5 586.5L343.5 584.5L339 487V406L285 378.5L253.5 403.5Z" stroke="black"/>
+</g>
+</g>
+</svg>
