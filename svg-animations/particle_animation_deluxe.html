@@ -75,6 +75,27 @@
                     </label>
                 </div>
             </div>
+            <div class="radio-container">
+                <div class="radio-label">motion</div>
+                <div class="radio-group-container">
+                    <label class="radio-button-container">flow
+                        <input type="radio" value="flow" name="motion" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">drop
+                        <input type="radio" value="drop" name="motion">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">float
+                        <input type="radio" value="float"  name="motion" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">orbit
+                        <input type="radio"value="orbit"  name="motion" >
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -139,9 +160,9 @@
             this.acceleration = new PVector(0, 0.2);
             this.circ = null;
             this.lifespan = 200;
-            this.mode = "float";
+            this.mode = "flow";
 
-            
+
         }
 
         init(container) {
@@ -208,8 +229,9 @@
         // ------------------------ DROP ------------------------
         drop() {
             this.velocity.add(this.acceleration);
-           
-            this.velocity.y *= .995;
+
+            this.velocity.y *= .99;
+            this.velocity.x *= .995;
             this.position.add(this.velocity);
             this.bounceIfNeeded();
             this.draw();
@@ -281,6 +303,28 @@
             this.lifespan = 200;
         }
 
+
+        changeMode(newMode) {
+            if (newMode == this.mode) return;
+
+            this.mode = newMode;
+
+            if (this.mode == "float") {
+                this.velocity = new PVector(1.5 - Math.random() * 3, -1 - Math.random() * 2);
+            } else if (this.mode == "drop") {
+                this.velocity = new PVector(this.velocity.x, Math.random() * 4 - 2);
+                this.acceleration = new PVector(0, 0.6);
+            } else if (this.mode == "flow") {
+                this.velocity = new PVector(this.velocity.x, Math.random() * 4 - 2);
+                this.acceleration = new PVector(0, 0.2);
+            } else if (this.mode == "spin") {
+                // this.spinDx = this.location.x - 250;
+                // this.spinRadius = Math.abs(this.spinDx) + Math.abs(Math.random() * this.spinDx);
+                // this.spinAngle = Math.random() > .5 ? Math.acos(this.spinDx / this.spinRadius) : Math.PI * 2 - Math.acos(this.spinDx / this.spinRadius);
+                // this.velocity = new PVector(0, 0);
+            }
+        }
+
         draw() {
             this.circ.setAttribute("cx", this.position.x);
             this.circ.setAttribute("cy", this.position.y);
@@ -306,14 +350,21 @@
     }
     let currentPalette = colors["purple"];
 
-    const containerDimensionsRadios = document.querySelectorAll('input[type=radio][name="palette"]');
-
+    const colorPaletteRadios = document.querySelectorAll('input[type=radio][name="palette"]');
+    const motionRadios = document.querySelectorAll('input[type=radio][name="motion"]');
 
     function initRadioButtons() {
-        for (const radio of containerDimensionsRadios) {
+        for (const radio of colorPaletteRadios) {
             radio.addEventListener('change', () => {
                 console.log(radio.value);
                 changeColors(radio.value)
+            })
+        }
+
+        for (const radio of motionRadios) {
+            radio.addEventListener('change', () => {
+                console.log(radio.value);
+                changeMode(radio.value)
             })
         }
     }
@@ -338,6 +389,16 @@
         bg.setAttribute("style", `fill:${currentPalette[0]}`);
         title.setAttribute("style", `fill:${currentPalette[2]}`);
         //title.setAttribute("fill", currentPalette[2])
+
+
+    }
+
+    function changeMode(newMode) {
+
+        particles.forEach((particle) => {
+            particle.changeMode(newMode)
+        })
+
 
 
     }
