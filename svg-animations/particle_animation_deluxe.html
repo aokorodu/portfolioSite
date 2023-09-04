@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Javascript Animation Particle System</title>
+    <link rel="stylesheet" href="../css/main-svg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="title-holder">
+        <div class="info-holder">
+            <div class="title">Javascript Animation</div>
+            <div class="subtitle">Deluxe Particle System</div>
+
+        </div>
+    </div>
+    <div class="content-holder">
+        <div class="section-holder">
+            <div class="svg-holder">
+                <svg id="svg" width="500" height="500" viewbox="0 0 500 500">
+                    <style>
+                        circle {
+                            stroke: none;
+                        }
+
+                        svg {
+                            background-color: #ffffff;
+                        }
+
+                        #bg {
+                            transition-property: all;
+                            transition-duration: 333ms;
+                        }
+
+                        #title {
+                            transition-property: all;
+                            transition-duration: 333ms;
+                        }
+                    </style>
+                    <defs>
+                        <filter id="blur-filter">
+                            <feGaussianBlur id="gauss-blur" stdDeviation="2" />
+                        </filter>
+                    </defs>
+                    <rect id="bg" x="0" y="0" width="499" height="499" fill="#2E0249" stroke="white" stroke-width="10"
+                        stroke-opacity=".3" />
+                    <text id="title" x="250" y="250" fill="#F806CC" fill-opacity=".7" text-anchor="middle"
+                        dominant-baseline="middle" font-size="40" font-weight="100">z u u b a d i g i t a l</text>
+                </svg>
+
+            </div>
+        </div>
+        <div class="section-holder">
+            <div class="radio-container">
+                <div class="radio-label">palette</div>
+                <div class="radio-group-container">
+                    <label class="radio-button-container">purple
+                        <input type="radio" value="purple" name="palette" checked="checked">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">retro
+                        <input type="radio" value="retro" name="palette">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">pastel
+                        <input type="radio" name="palette" value="pastel">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-button-container">green
+                        <input type="radio" name="palette" value="green">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    class PVector {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        mag() {
+            return Math.sqrt(this.x * this.x + this.y * this.y)
+        }
+
+        add(v) {
+            this.x += v.x;
+            this.y += v.y;
+        }
+
+        sub(v) {
+            this.x -= v.x;
+            this.y -= v.y;
+        }
+
+        static Subtract(v1, v2) {
+            let x = v1.x - v2.x;
+            let y = v1.y - v2.y;
+
+            return new PVector(x, y);
+        }
+
+        multiply(num) {
+            this.x *= num;
+            this.y *= num;
+        }
+
+        normalize(v) {
+            let num = Math.sqrt(this.x * this.x + this.y * this.y)
+            this.x = this.x / num;
+            this.y = this.y / num;
+        }
+
+        reset() {
+            this.x = 0;
+            this.y = 0;
+        }
+
+
+    }
+
+    class Particle {
+        constructor(x, y, r, w, h, fill) {
+            this.startX = x;
+            this.startY = y;
+            this.r = r;
+            this.right = w - r;
+            this.height = h;
+            this.top = this.startY;
+            this.fill = fill;
+            this.position = new PVector(x, y);
+            this.velocity = new PVector(3 - Math.random() * 6, -8 - Math.random() * 6);
+            this.acceleration = new PVector(0, 0.2);
+            this.circ = null;
+            this.lifespan = 200;
+            this.mode = "float";
+
+            
+        }
+
+        init(container) {
+            this.reset();
+            const namespace = "http://www.w3.org/2000/svg";
+            this.circ = document.createElementNS(namespace, "circle");
+            this.circ.setAttribute("cx", this.position.x);
+            this.circ.setAttribute("cy", this.position.y);
+            this.circ.setAttribute("r", this.r);
+            this.circ.setAttribute("fill", this.fill);
+            this.circ.setAttribute("fill-opacity", .3 + Math.random() * .6);
+            container.appendChild(this.circ);
+        }
+
+        changeFill(newFill) {
+            if (newFill == this.fill) return;
+            this.fill = newFill;
+            this.circ.setAttribute("fill", this.fill);
+
+        }
+
+        update() {
+
+            switch (this.mode) {
+                case "flow":
+                    this.flow()
+                    break;
+
+                case "float":
+                    this.float()
+                    break;
+
+                case "drop":
+                    this.drop()
+                    break;
+
+                case "orbit":
+                    this.orbit()
+                    break;
+            }
+
+        }
+
+        // ------------------------ ORBIT ------------------------
+
+        orbit() {
+            const targetV = new PVector(250, 250);
+            targetV.sub(this.position);
+            targetV.normalize();
+            targetV.multiply(.1);
+            this.move(targetV);
+            this.velocity.multiply(.999);
+            this.draw();
+        }
+
+        move(newForce) {
+            this.acceleration.add(newForce);
+            this.velocity.add(this.acceleration);
+            this.position.add(this.velocity);
+            this.acceleration = new PVector(0, 0);
+        }
+
+
+        // ------------------------ DROP ------------------------
+        drop() {
+            this.velocity.add(this.acceleration);
+           
+            this.velocity.y *= .995;
+            this.position.add(this.velocity);
+            this.bounceIfNeeded();
+            this.draw();
+        }
+
+        bounceIfNeeded() {
+            if (this.position.y > this.height - this.r) {
+                this.position.y = this.height - this.r;
+                this.velocity.y *= -1;
+
+            }
+
+            if (this.position.x > this.right) {
+                this.position.x = this.right;
+                this.velocity.x *= -1;
+            } else if (this.position.x < this.r) {
+                this.position.x = this.r;
+                this.velocity.x *= -1;
+            }
+        }
+
+
+        // ------------------------ FLOAT ------------------------
+        float() {
+            this.position.add(this.velocity);
+            this.repositionIfOffscreen();
+            this.draw();
+        }
+
+        repositionIfOffscreen() {
+            if (this.position.y < 0) {
+                this.position.y = this.startY;
+            }
+
+
+            if (this.position.x > this.right) {
+                this.position.x = 0;
+            } else if (this.position.x < 0) {
+                this.position.x = this.right;
+            }
+        }
+
+        // ------------------------ FLOW ------------------------
+        flow() {
+            this.velocity.add(this.acceleration);
+            this.position.add(this.velocity);
+            this.restartFlowIfNeeded();
+            this.draw();
+        }
+
+        restartFlowIfNeeded() {
+            if (this.position.y > this.top) {
+                this.reset();
+                return;
+            }
+
+            if (this.position.x > this.right) {
+                this.position.x = this.right;
+                this.velocity.x *= -1;
+            } else if (this.position.x < this.r) {
+                this.position.x = this.r;
+                this.velocity.x *= -1;
+            }
+        }
+
+        reset() {
+            this.position = new PVector(this.startX, this.startY);
+            this.velocity = new PVector(1 - Math.random() * 2, -7 - Math.random() * 6);
+            this.lifespan = 200;
+        }
+
+        draw() {
+            this.circ.setAttribute("cx", this.position.x);
+            this.circ.setAttribute("cy", this.position.y);
+            this.circ.setAttribute("fill-opacity", .4 * this.lifespan / 100);
+        }
+    }
+
+    const particles = [];
+    const num_particles = 100;
+    const svg = document.querySelector("#svg");
+    const bg = document.querySelector("#bg");
+    const title = document.querySelector("#title");
+
+    const purplePalette = ["#2E0249", "#A91079", "#F806CC", "#570A57", "#810955"];
+    const retroPalette = ["#EEEEEE", "#DEDEDE", "#FF4949", "#C10000"];
+    const pastelPalette = ["#6E85B7", "#B2C8DF", "#C4D7E0", "#F8F9D7"];
+    const greenPalette = ["#7DCE13", "#5BB318", "#2B7A0B", "#EAE509"];
+    const colors = {
+        "purple": purplePalette,
+        "retro": retroPalette,
+        "pastel": pastelPalette,
+        "green": greenPalette
+    }
+    let currentPalette = colors["purple"];
+
+    const containerDimensionsRadios = document.querySelectorAll('input[type=radio][name="palette"]');
+
+
+    function initRadioButtons() {
+        for (const radio of containerDimensionsRadios) {
+            radio.addEventListener('change', () => {
+                console.log(radio.value);
+                changeColors(radio.value)
+            })
+        }
+    }
+
+    initRadioButtons();
+    initParticles();
+    moveParticles();
+
+    function getParticleColor() {
+        const max = currentPalette.length - 1;
+        const min = 1;
+        return currentPalette[Math.floor(Math.random() * (max - min + 1) + min)]
+    }
+
+    function changeColors(newColor) {
+        currentPalette = colors[newColor];
+
+        particles.forEach((particle) => {
+            particle.changeFill(getParticleColor())
+        })
+
+        bg.setAttribute("style", `fill:${currentPalette[0]}`);
+        title.setAttribute("style", `fill:${currentPalette[2]}`);
+        //title.setAttribute("fill", currentPalette[2])
+
+
+    }
+
+    function initParticles() {
+        for (let i = 0; i < num_particles; i++) {
+            const part = new Particle(250, 520, 4 + Math.round(Math.random() * 6), 500, 500, getParticleColor());
+            part.init(svg);
+            particles.push(part)
+        }
+    }
+    function moveParticles() {
+        particles.forEach((part) => {
+            part.update();
+        })
+
+        window.requestAnimationFrame(moveParticles)
+    }
+</script>
+
+</html>
