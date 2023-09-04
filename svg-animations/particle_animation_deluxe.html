@@ -73,6 +73,10 @@
                         <input type="radio" name="palette" value="green">
                         <span class="checkmark"></span>
                     </label>
+                    <label class="radio-button-container">grey
+                        <input type="radio" name="palette" value="grey">
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
             </div>
             <div class="radio-container">
@@ -372,11 +376,13 @@
     const retroPalette = ["#EEEEEE", "#DEDEDE", "#FF4949", "#C10000"];
     const pastelPalette = ["#6E85B7", "#B2C8DF", "#C4D7E0", "#F8F9D7"];
     const greenPalette = ["#7DCE13", "#5BB318", "#2B7A0B", "#EAE509"];
+    const greyPalette = ["#352F44", "#5C5470", "#B9B4C7", "#FAF0E6"];
     const colors = {
         "purple": purplePalette,
         "retro": retroPalette,
         "pastel": pastelPalette,
-        "green": greenPalette
+        "green": greenPalette,
+        "grey": greyPalette
     }
     let currentPalette = colors["purple"];
 
